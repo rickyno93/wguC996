@@ -21,3 +21,6 @@ print (np.arange(5) / np.arange(1, 6))
 
 x = np.arange(9).reshape(3,3)
 print (2**x)
+
+# anytime a loop is used on an array, a vectorized expression should be
+# considered instead
