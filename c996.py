@@ -17,7 +17,7 @@ uriList = []
 for url in soup.find_all('a'):
     uri = url.get('href')
     if type(uri) is str:
-        if uri.startswith('https://www.census.gov'):
+        if uri.startswith('http'):
             uriList.append(url.get('href'))
         if uri.startswith('/'):
             uriList.append('https://www.census.gov%s' % uri)
@@ -37,3 +37,5 @@ uriList = list(dict.fromkeys(uriList))
 with open('uriList.csv','w') as uriListFile:
     wr = csv.writer(uriListFile, quoting=csv.QUOTE_ALL)
     wr.writerow(uriList)
+
+print('Success')
